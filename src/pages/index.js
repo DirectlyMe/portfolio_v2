@@ -1,21 +1,78 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import MediaQuery from "react-responsive";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import AppScreensPanel from "../components/AppScreensPanel/AppScreens";
+import AppFeaturesPanel from "../components/AppFeaturesPanel/AppFeatures";
+import ProjectListMobile from "../components/ProjectListMobile";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+    const [activeProjectIndex, setActiveProject] = useState(0);
+    const [deselected, setDeselected] = useState(false);
 
-export default IndexPage
+    const projects = data.site.siteMetadata.projectData.projects;
+
+    function changeActiveProject(project) {
+        setDeselected(true);
+        setTimeout(() => {
+            setActiveProject(project);
+            setDeselected(false);
+        }, 900);
+    }
+
+    return (
+        <Layout>
+            <SEO title="Home" />
+            <MediaQuery query="(min-width: 900px)">
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                    }}
+                >
+                    <AppScreensPanel
+                        projectList={projects}
+                        activeProjectIndex={activeProjectIndex}
+                        selectProject={changeActiveProject}
+                        deselected={deselected}
+                    />
+                    <AppFeaturesPanel
+                        activeProjectIndex={activeProjectIndex}
+                        deselected={deselected}
+                    />
+                </div>
+            </MediaQuery>
+            <MediaQuery query="(max-width: 600px)">
+                <ProjectListMobile
+                    projects={projects}
+                />
+            </MediaQuery>
+        </Layout>
+    );
+};
+
+export default IndexPage;
+
+export const query = graphql`
+    query {
+        site {
+            siteMetadata {
+                projectData {
+                    projects {
+                        name
+                        type
+                        features
+                        screenShots
+                        technologies {
+                            name
+                            color
+                        }
+                        github
+                    }
+                }
+            }
+        }
+    }
+`;

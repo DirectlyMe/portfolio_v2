@@ -1,0 +1,62 @@
+.app-features-panel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 35%;
+  height: 100%;
+  background-color: #FCFFB3;
+  overflow: hidden;
+}
+
+@keyframes slide-up {
+  from {
+    margin-top: 200%;
+  }
+  to {
+    margin-top: 20%;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    margin-top: 20%;
+  }
+  to {
+    margin-top: 200%;
+  }
+}
+
+.app-details-incoming {
+  position: relative;
+  z-index: 999;
+  animation-duration: .9s;
+  animation-name: slide-up;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.app-details-outgoing {
+  position: relative;
+  z-index: 999;
+  animation-duration: .9s;
+  animation-name: slide-down;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.app-details--tech-list {
+  margin-top: 20%;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+
+  li {
+    padding: 1.5em 0 1.5em 0;
+  }
+}

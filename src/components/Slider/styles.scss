@@ -1,0 +1,90 @@
+@keyframes slider-incoming {
+  from {
+    margin-top: -412px;
+    z-index: -1;
+  } to {
+    margin-top: 0px;
+    z-index: 10;
+  }
+}
+
+@keyframes slider-leaving {
+  from {
+    margin-top: 0px;
+    z-index: -1;
+  } to {
+    margin-top: 412px;
+    z-index: -1;
+  }
+}
+
+.slider-leaving {
+  animation-name: slider-leaving;
+  animation-timing-function: .5s;
+  animation-fill-mode: forwards;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  animation-name: slider-incoming;
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+
+  .slider-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .slide {
+      display: inline-block;
+      height: auto;
+      max-height: 900px;
+      width: 100%;
+    }
+  }
+}
+
+.right-arrow, .left-arrow {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform ease-in .1s;
+
+  &:hover {
+    transition: transform ease-in .1s;
+    transform: scale(1.1)
+  }
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  z-index: 999;
+  color: #fff;
+
+    &:focus {
+      outline: 0;
+    }
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  z-index: 999;
+  color: #fff;
+
+    &:focus {
+      outline: 0;
+    }
+}

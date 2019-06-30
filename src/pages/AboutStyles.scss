@@ -1,0 +1,56 @@
+@keyframes into-focus {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about {
+  animation-name: into-focus;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.large-bubble {
+  animation-name: into-focus;
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+}
+
+.medium-bubble {
+  animation-name: into-focus;
+  animation-duration: 1.8s;
+  animation-fill-mode: forwards;
+}
+
+.small-bubble {
+  animation-name: into-focus;
+  animation-duration: 1.4s;
+  animation-fill-mode: forwards;
+}
+
+.smallest-bubble {
+  animation-name: into-focus;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.about--icon-link {
+  color: black;
+  
+  &:visited {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fcffb3;
+    margin-top: 60px;
+  }
+}

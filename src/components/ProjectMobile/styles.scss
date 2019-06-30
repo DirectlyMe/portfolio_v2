@@ -1,0 +1,33 @@
+.app-showcase {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1.2em;
+  position: relative;
+  z-index: 10;
+}
+
+.app-features {
+  font-size: 18px;
+  margin-right: 10%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.show-more-button {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  padding: .5em;
+}
+
+.tech-list {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 4%;
+  margin-right: 5%;
+}
