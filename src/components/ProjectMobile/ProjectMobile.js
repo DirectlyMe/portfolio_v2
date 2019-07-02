@@ -4,7 +4,7 @@ import { faGithub } from "@fortawesome/fontawesome-free-brands";
 import Slider from "../Slider/Slider";
 import Tag from "../Tag";
 import DownArrow from "../../images/DownArrow.svg";
-import { projectTypes } from "../../ProjectsData";
+import projectTypes from "../../ProjectTypes";
 import "./styles.scss";
 
 class ProjectMobile extends Component {

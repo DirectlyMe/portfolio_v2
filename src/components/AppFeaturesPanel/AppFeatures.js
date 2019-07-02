@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/fontawesome-free-brands";
+import { animated, useSpring } from "react-spring";
 import classnames from "classnames";
 import Tag from "../Tag";
 import BlueCircle from "../../images/BlueCircle.svg";
@@ -31,8 +32,8 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
         }
     `);
 
-    const [height, setHeight] = useState(0);
-    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(window.innerHeight);
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         window.addEventListener("resize", updateWindowDimensions);
@@ -40,7 +41,7 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
         return () => {
             window.removeEventListener("resize", updateWindowDimensions);
         }
-    })
+    }, [])
 
     function updateWindowDimensions() {
         setHeight(window.innerHeight);
@@ -58,6 +59,8 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
         <Tag key={index} text={technology.name} color={technology.color} />
     ));
 
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
+
     return (
         <>
             <div
@@ -70,19 +73,19 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                 <div
                     key={name}
                     className={classnames({
-                        ["app-details-incoming"]: !deselected, // eslint-disable-line
-                        ["app-details-outgoing"]: deselected, // eslint-disable-line
+                        // ["app-details-incoming"]: !deselected, // eslint-disable-line
+                        // ["app-details-outgoing"]: deselected, // eslint-disable-line
                     })}
                 >
                     <div
                         style={{
-                            marginTop: "2%",
+                            marginTop: "22%",
                             textAlign: "center",
                             fontSize: "36px",
                             fontWeight: "400",
                         }}
                     >
-                        {name}
+                        <animated.div style={props}>{name}</animated.div>
                     </div>
                     <ul
                         style={{

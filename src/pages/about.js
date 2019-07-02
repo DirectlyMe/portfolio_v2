@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import MediaQuery from "react-responsive";
-import { ReactComponent as LrgCircle } from "../images/AboutLrgCircle.svg";
-import { ReactComponent as MedCircle } from "../images/AboutMedCircle.svg";
-import { ReactComponent as SmlCircle } from "../images/AboutSmlCircle.svg";
-import { ReactComponent as SmallestCircle } from "../images/AboutSmlestCircle.svg";
+import Layout from "../components/layout";
+import LrgCircle from "../images/AboutLrgCircle.svg";
+import MedCircle from "../images/AboutMedCircle.svg";
+import SmlCircle from "../images/AboutSmlCircle.svg";
+import SmallestCircle from "../images/AboutSmlestCircle.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/fontawesome-free-brands";
-import "./AboutStyles.scss";
+import "./about_styles.scss";
 
 class AboutScreen extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class AboutScreen extends Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <MediaQuery query="(min-width: 900px)">
           <div style={{ backgroundColor: "#FFC95F", height: this.state.height }}>
             <div
@@ -165,7 +166,7 @@ class AboutScreen extends Component {
             </div>
           </div>
         </MediaQuery>
-      </div>
+      </Layout>
     );
   }
 }

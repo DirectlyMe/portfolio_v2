@@ -8,42 +8,156 @@
   overflow: hidden;
 }
 
-@keyframes slide-up {
-  from {
-    margin-top: 200%;
+@-webkit-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
   }
-  to {
-    margin-top: 20%;
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
   }
 }
 
-@keyframes slide-down {
-  from {
-    margin-top: 20%;
+@-moz-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
   }
-  to {
-    margin-top: 200%;
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutFromNone {
+  0% {
+      display: block;
+      opacity: 1;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: none;
+      opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOutFromNone {
+  0% {
+      display: block;
+      opacity: 1;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: none;
+      opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOutFromNone {
+  0% {
+      display: block;
+      opacity: 1;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: none;
+      opacity: 0;
+  }
+}
+
+@keyframes fadeOutFromNone {
+  0% {
+      display: block;
+      opacity: 1;
+  }
+
+  1% {
+      display: block;
+      opacity: 0.5;
+  }
+
+  100% {
+      display: none;
+      opacity: 0;
   }
 }
 
 .app-details-incoming {
-  position: relative;
-  z-index: 999;
-  animation-duration: .9s;
-  animation-name: slide-up;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  overflow: hidden;
+  margin-top: 20%;
+  -webkit-animation: fadeOutFromNone .9s ease-out;
+  -moz-animation: fadeOutFromNone .9s ease-out;
+  -o-animation: fadeOutFromNone .9s ease-out;
+  animation: fadeOutFromNone .9s ease-out;
 }
 
 .app-details-outgoing {
-  position: relative;
-  z-index: 999;
-  animation-duration: .9s;
-  animation-name: slide-down;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-  overflow: hidden;
+  margin-top: 20%;
+  -webkit-animation: fadeInFromNone .9s ease-out;
+  -moz-animation: fadeInFromNone .9s ease-out;
+  -o-animation: fadeInFromNone .9s ease-out;
+  animation: fadeInFromNone .9s ease-out;
 }
 
 .app-details--tech-list {

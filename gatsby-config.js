@@ -1,7 +1,8 @@
 const projectTypes = Object.freeze({
   web: "website",
-  app: "mobileApp"
+  app: "mobileApp",
 });
+
 
 module.exports = {
   siteMetadata: {

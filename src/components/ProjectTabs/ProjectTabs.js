@@ -16,7 +16,7 @@ const ProjectTabs = ({ projects, activeProject, selectProjectFunc }) => {
       return (
         <li
           key={project.name}
-          onClick={e => selectProjectFunc(project)}
+          onClick={e => selectProjectFunc(projects.indexOf(project))}
         >
           {project.name}
         </li>

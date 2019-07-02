@@ -23,7 +23,7 @@ class NavBar extends Component {
 
   // changes style of navbar based on route pathname
   highlightRoute = () => {
-    if (window.location.pathname === "/" && this.state.aboutSelected) {
+    if (window.location.pathname === "/work" && this.state.aboutSelected) {
       this.setState({ workSelected: true, aboutSelected: false });
     } else if (window.location.pathname === "/about" && this.state.workSelected) {
       this.setState({ aboutSelected: true, workSelected: false });
@@ -40,10 +40,10 @@ class NavBar extends Component {
             <div className="navigationButtons">
               <li className="navbar-li">
                 <Link
-                  to="/"
+                  to="/work"
                   style={{ textDecoration: "none", color: "black" }}
                   className={classNames(["nav-button"], {
-                    ["highlight-route-work"]: window.location.pathname === "/" // eslint-disable-line
+                    ["highlight-route-work"]: window.location.pathname === "/work" // eslint-disable-line
                   })}
                 >
                   Work
@@ -67,7 +67,7 @@ class NavBar extends Component {
           <nav
             className={classNames(["navbar"], {
               // determines style of the navbar depending on the page
-              ["navbar-work"]: window.location.pathname === "/", // eslint-disable-line
+              ["navbar-work"]: window.location.pathname === "/work", // eslint-disable-line
               ["navbar-about"]: window.location.pathname === "/about" // eslint-disable-line
             })}
           >
@@ -87,9 +87,9 @@ class NavBar extends Component {
             <div className="navigationButtons">
               <li style={{ marginRight: ".3em" }}>
                 <Link
-                  to="/"
+                  to="/work"
                   className={classNames(["nav-button"], {
-                    ["highlight-route"]: window.location.pathname === "/" // eslint-disable-line
+                    ["highlight-route"]: window.location.pathname === "/work" // eslint-disable-line
                   })}
                 >
                   Work
