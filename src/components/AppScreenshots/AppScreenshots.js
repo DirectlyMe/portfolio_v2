@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useTransition, useSpring, animated } from "react-spring";
 import { useStaticQuery, graphql } from "gatsby";
+
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
@@ -8,53 +8,24 @@ import projectTypes from "../../ProjectTypes";
 import ExpandedScreen from "../ExpandedImage/ExpandedImage";
 import "./styles.scss";
 
-const AppScreenshots = ({ activeProjectIndex, height, width, deselected }) => {
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    projectData {
-                        projects {
-                            name
-                            type
-                            features
-                            screenShots
-                            technologies {
-                                name
-                                color
-                            }
-                            github
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
+const AppScreenshots = ({ activeProject, height, width, deselected }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [translateValue, setTranslateValue] = useState(0);
     const [expandedSelected, setExpandSelected] = useState(false);
     const [selectedImage, setSelectedImage] = useState("");
-    const [imageNodes, setImageNodes] = useState(["Testing", "Testing"]);
-
-    const projects = data.site.siteMetadata.projectData.projects;
+    const [imageNodes, setImageNodes] = useState([]);
 
     useEffect(() => {
         setCurrentIndex(0);
         setTranslateValue(0);
         setExpandSelected(0);
 
-        const nodes = getImages(data.site.siteMetadata.projectData.projects[activeProjectIndex]);
+        const nodes = getImages(
+            activeProject
+        );
 
         setImageNodes(nodes);
-    }, [activeProjectIndex]);
-
-    const transitions = useTransition(imageNodes, item => item.key, {
-        from: { opacity: 0 },
-        enter: { opacity: 0 },
-        update: { opacity: 1 },
-        leave: { opacity: 0 },
-    });
+    }, [activeProject]);
 
     function goToPrev() {
         if (currentIndex === 0) {
@@ -104,8 +75,8 @@ const AppScreenshots = ({ activeProjectIndex, height, width, deselected }) => {
                             zIndex: 7,
                         }}
                         className={classNames("screenshot-node", {
-                            //[styles.itemFade]: !itemDeselected, // eslint-disable-line
-                            //["screen-shots-departing"]: itemDeselected, // eslint-disable-line
+                            // ["screen-shots-incoming"]: !itemDeselected, // eslint-disable-line
+                            // ["screen-shots-departing"]: itemDeselected, // eslint-disable-line
                         })}
                     >
                         <img
@@ -215,14 +186,7 @@ const AppScreenshots = ({ activeProjectIndex, height, width, deselected }) => {
                         transition: "transform ease-out 0.70s",
                     }}
                 >
-                    {transitions.map(
-                        ({ item, props, key }) =>
-                            item && (
-                                <animated.div key={key} style={props}>
-                                    {item}
-                                </animated.div>
-                            )
-                    )}
+                    {imageNodes}
                 </div>
             </div>
             <div className="more-images--wrapper">

@@ -14,7 +14,6 @@ const Work = ({ data }) => {
 
     function changeActiveProject(projectIndex) {
         setDeselected(true);
-        
         setActiveProjectIndex(projectIndex);
         setDeselected(false);
     }

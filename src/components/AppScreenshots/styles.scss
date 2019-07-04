@@ -18,6 +18,8 @@
 }
 
 .more-images--wrapper {
+    position: absolute;
+    bottom: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
