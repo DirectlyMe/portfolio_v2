@@ -10,7 +10,32 @@
 .about {
   animation-name: into-focus;
   animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards;  
+}
+
+.about-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.about-technologies--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12vh;
+
+  .about-technologies {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 500px;
+  }
 }
 
 .large-bubble {

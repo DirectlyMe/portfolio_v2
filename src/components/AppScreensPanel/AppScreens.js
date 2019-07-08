@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useTransition, animated, config } from "react-spring";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import Context from "../../Context";
 import ProjectTabs from "../ProjectTabs/ProjectTabs";
 import YellowCircle from "../../images/YellowCircle.svg";
 import AppScreenshots from "../AppScreenshots/AppScreenshots";
@@ -43,6 +46,10 @@ const AppScreens = ({
     const [width, setWidth] = useState(window.innerWidth);
     const [projectIndex, setProjectIndex] = useState(0);
     const [timesClicked, setTimesClicked] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [translateValue, setTranslateValue] = useState(0);
+
+    const context = useContext(Context);
 
     useEffect(() => {
         window.addEventListener("resize", updateWindowDimensions);
@@ -55,27 +62,37 @@ const AppScreens = ({
     useEffect(() => {
         setProjectIndex(activeProjectIndex);
         setTimesClicked(timesClicked + 1);
-    }, [activeProjectIndex])
-
-    let transitions;
-    if (activeProjectIndex === 0 && timesClicked === 0) {
-        transitions = useTransition(projects[projectIndex], item => item.name, {
-            from: { transform: 'translate3d(0,1200px,0)' },
-            enter: { transform: 'translate3d(0,0px,0)' },
-            leave: { transform: 'translate3d(0,1200px,0)' },
-        });
-    } else {
-        transitions = useTransition(projects[projectIndex], item => item.name, {
-            from: { transform: 'translate3d(0,1200px,0)' },
-            enter: { transform: 'translate3d(0,1200px,0)' },
-            update: { transform: 'translate3d(0,0px,0)' },
-            leave: { transform: 'translate3d(0,1200px,0)' },
-        });
-    }
+    }, [activeProjectIndex]);
 
     function updateWindowDimensions() {
         setHeight(window.innerHeight);
         setWidth(window.innerWidth);
+    }
+
+    function goToPrev() {
+        if (currentIndex === 0) {
+            return;
+        }
+        setCurrentIndex(currentIndex - 1);
+
+        const nodeHeight = document.querySelector(".screenshot-node")
+            .clientHeight;
+
+        setTranslateValue(translateValue + nodeHeight);
+    }
+
+    function goToNext() {
+        if (currentIndex === context.imageNodes.length - 1) {
+            setCurrentIndex(0);
+            setTranslateValue(0);
+        }
+
+        setCurrentIndex(currentIndex + 1);
+
+        const nodeHeight = document.querySelector(".screenshot-node")
+            .clientHeight;
+
+        setTranslateValue(translateValue - nodeHeight);
     }
 
     return (
@@ -101,22 +118,34 @@ const AppScreens = ({
                     selectProjectFunc={selectProject}
                 />
             </div>
-            {transitions.map(
-                ({ item, props, key }) =>
-                    {
-                        console.log(item);
-                        return (
-                            <animated.div key={key} style={props}>
-                                <AppScreenshots
-                                    activeProject={item}
-                                    height={height}
-                                    width={width}
-                                    deselected={deselected}
-                                />
-                            </animated.div>
-                        )
-                    }
-            )}
+            <AppScreenshots
+                activeProject={activeProject}
+                height={height}
+                width={width}
+                deselected={deselected}
+                currentIndex={currentIndex}
+                translateValue={translateValue}
+            />
+            <div className="more-images--wrapper">
+                {currentIndex < context.imageNodes.length - 1 ? (
+                    <span className="more-images--btn">
+                        <FontAwesomeIcon
+                            icon={faAngleDown}
+                            size="5x"
+                            onClick={() => goToNext()}
+                        />
+                    </span>
+                ) : null}
+                {currentIndex > 0 ? (
+                    <span className="more-images--btn">
+                        <FontAwesomeIcon
+                            icon={faAngleUp}
+                            size="5x"
+                            onClick={() => goToPrev()}
+                        />
+                    </span>
+                ) : null}
+            </div>
         </div>
     );
 };

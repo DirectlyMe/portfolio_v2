@@ -15,9 +15,10 @@ module.exports = {
           name: "Olyve Art",
           type: projectTypes.web,
           features: [
-            "Ecommerce oriented site",
+            "eCommerce art gallery",
             "Completely fleshed out mobile and desktop user experience",
             "Integrated with stripe for online payments",
+            "Email order confirmation",
             "Clean, minimalist style"
           ],
           screenShots: [
@@ -41,6 +42,18 @@ module.exports = {
             },
           ],
           github: "https://www.github.com/DirectlyMe/ArtSite",
+        },
+        {
+          name: "Olyve Art Inventory",
+          type: projectTypes.web,
+          features: [
+            "Add and remove products from your site",
+            "Keep track of your site's transactions",
+            "Control your business by toggle between production mode and test mode",
+          ],
+          screenShots: [
+            
+          ]
         },
         {
           name: "Spots",

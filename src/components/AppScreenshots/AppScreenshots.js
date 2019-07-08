@@ -1,57 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-
+import React, { useState, useEffect, useContext } from "react";
 import classNames from "classnames";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import projectTypes from "../../ProjectTypes";
 import ExpandedScreen from "../ExpandedImage/ExpandedImage";
+import Context from "../../Context";
 import "./styles.scss";
 
-const AppScreenshots = ({ activeProject, height, width, deselected }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [translateValue, setTranslateValue] = useState(0);
+const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex, translateValue }) => {
     const [expandedSelected, setExpandSelected] = useState(false);
     const [selectedImage, setSelectedImage] = useState("");
-    const [imageNodes, setImageNodes] = useState([]);
+
+    const context = useContext(Context);
 
     useEffect(() => {
-        setCurrentIndex(0);
-        setTranslateValue(0);
         setExpandSelected(0);
 
         const nodes = getImages(
             activeProject
         );
 
-        setImageNodes(nodes);
+        context.imageNodes = nodes;
+        context.updateContext(context);
     }, [activeProject]);
 
-    function goToPrev() {
-        if (currentIndex === 0) {
-            return;
-        }
-        setCurrentIndex(currentIndex - 1);
-
-        const nodeHeight = document.querySelector(".screenshot-node")
-            .clientHeight;
-
-        setTranslateValue(translateValue + nodeHeight);
-    }
-
-    function goToNext() {
-        if (currentIndex === imageNodes.length - 1) {
-            setCurrentIndex(0);
-            setTranslateValue(0);
-        }
-
-        setCurrentIndex(currentIndex + 1);
-
-        const nodeHeight = document.querySelector(".screenshot-node")
-            .clientHeight;
-
-        setTranslateValue(translateValue - nodeHeight);
-    }
 
     function toggleExpandedScreen(imageSrc) {
         console.log(imageSrc);
@@ -180,34 +150,14 @@ const AppScreenshots = ({ activeProject, height, width, deselected }) => {
         <>
             <div className="screenshot-nodes">
                 <div
-                    classNames="screenshot-nodes--wrapper"
+                    className="screenshot-nodes--wrapper"
                     style={{
                         transform: `translateY(${translateValue}px)`,
                         transition: "transform ease-out 0.70s",
                     }}
                 >
-                    {imageNodes}
+                    {context.imageNodes}
                 </div>
-            </div>
-            <div className="more-images--wrapper">
-                {currentIndex < imageNodes.length - 1 ? (
-                    <span className="more-images--btn">
-                        <FontAwesomeIcon
-                            icon={faAngleDown}
-                            size="5x"
-                            onClick={() => goToNext()}
-                        />
-                    </span>
-                ) : null}
-                {currentIndex > 0 ? (
-                    <span className="more-images--btn">
-                        <FontAwesomeIcon
-                            icon={faAngleUp}
-                            size="5x"
-                            onClick={() => goToPrev()}
-                        />
-                    </span>
-                ) : null}
             </div>
             {expandedSelected ? (
                 <ExpandedScreen
