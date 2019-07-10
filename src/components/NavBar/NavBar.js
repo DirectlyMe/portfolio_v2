@@ -25,10 +25,16 @@ class NavBar extends Component {
   highlightRoute = () => {
     if (window.location.pathname === "/work" && this.state.aboutSelected) {
       this.setState({ workSelected: true, aboutSelected: false });
-    } else if (window.location.pathname === "/about" && this.state.workSelected) {
+    } else if (window.location.pathname === "/" && this.state.workSelected) {
       this.setState({ aboutSelected: true, workSelected: false });
     }
   };
+
+  scrollToPage = (page) => {
+    if (page === "Home") {
+
+    }
+  }
 
   render() {
     const { name } = this.props;
@@ -51,10 +57,10 @@ class NavBar extends Component {
               </li>
               <li className="navbar-li">
                 <Link
-                  to="/about"
+                  to="/"
                   style={{ textDecoration: "none", color: "black" }}
                   className={classNames(["nav-button"], {
-                    ["highlight-route-about"]: window.location.pathname === "/about" // eslint-disable-line
+                    ["highlight-route-about"]: window.location.pathname === "/" // eslint-disable-line
                   })}
                 >
                   About
@@ -68,7 +74,7 @@ class NavBar extends Component {
             className={classNames(["navbar"], {
               // determines style of the navbar depending on the page
               ["navbar-work"]: window.location.pathname === "/work", // eslint-disable-line
-              ["navbar-about"]: window.location.pathname === "/about" // eslint-disable-line
+              ["navbar-about"]: window.location.pathname === "/" // eslint-disable-line
             })}
           >
             <div className="profileItems">
@@ -97,9 +103,9 @@ class NavBar extends Component {
               </li>
               <li style={{ marginRight: ".3em " }}>
                 <Link
-                  to="/about"
+                  to="/"
                   className={classNames(["nav-button"], {
-                    ["highlight-route"]: window.location.pathname === "/about" // eslint-disable-line
+                    ["highlight-route"]: window.location.pathname === "/" // eslint-disable-line
                   })}
                 >
                   About

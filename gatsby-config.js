@@ -22,10 +22,10 @@ module.exports = {
             "Clean, minimalist style"
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/desktop_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/mobile_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.43.27+PM.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.46.16+PM.png"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/home_desktop.jpg",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/home_mobile.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/item_desktop.jpg",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/item_mobile.jpg"
           ],
           technologies: [
             {
@@ -52,8 +52,30 @@ module.exports = {
             "Control your business by toggle between production mode and test mode",
           ],
           screenShots: [
-            
-          ]
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/desktop_home.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/mobile_home.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.43.27+PM.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.46.16+PM.png"
+          ],
+          technologies: [
+            {
+              name: "React",
+              color: "7EB14F"
+            },
+            {
+              name: "TypeScript",
+              color: "B8BBFF"
+            },
+            {
+              name: "C#",
+              color: "FF9F37"
+            },
+            {
+              name: "ASP.NET CORE",
+              color: "4CBDF4"
+            },
+          ],
+          github: "https://www.github.com/DirectlyMe/ArtSite",
         },
         {
           name: "Spots",

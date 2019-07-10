@@ -5,7 +5,7 @@ import ExpandedScreen from "../ExpandedImage/ExpandedImage";
 import Context from "../../Context";
 import "./styles.scss";
 
-const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex, translateValue }) => {
+const AppScreenshots = ({ activeProject, height, translateValue }) => {
     const [expandedSelected, setExpandSelected] = useState(false);
     const [selectedImage, setSelectedImage] = useState("");
 
@@ -37,78 +37,42 @@ const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex
             if (activeProject.type === projectTypes.app) {
                 imageNode = (
                     <div
-                        key={i}
-                        style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "space-evenly",
-                            zIndex: 7,
-                        }}
-                        className={classNames("screenshot-node", {
-                            // ["screen-shots-incoming"]: !itemDeselected, // eslint-disable-line
-                            // ["screen-shots-departing"]: itemDeselected, // eslint-disable-line
-                        })}
+                    key={i}
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        zIndex: 7,
+                    }}
+                    className="screenshot-node"
                     >
                         <img
-                            // height={height - height * 0.3}
+                            style={{ marginRight: "5%"}}
                             className="app-screenshots--large-image"
                             src={activeProject.screenShots[i]}
                             onClick={e => toggleExpandedScreen(e.target.src)}
                             alt="App screen"
-                        />
-                        <div className="app-screenshots--small-images-column">
-                            <img
-                                height={height - height * 0.63}
-                                width="100%"
-                                style={{
-                                    borderRadius: "10px",
-                                    marginBottom: "2%",
-                                    maxHeight: "530px",
-                                }}
-                                src={activeProject.screenShots[i + 1]}
-                                onClick={e =>
-                                    toggleExpandedScreen(e.target.src)
-                                }
-                                alt="App screen"
                             />
-                            <img
-                                height={height - height * 0.63}
-                                width="100%"
-                                style={{
-                                    borderRadius: "10px",
-                                    marginTop: "2%",
-                                    maxHeight: "530px",
-                                }}
-                                src={activeProject.screenShots[i + 2]}
-                                onClick={e =>
-                                    toggleExpandedScreen(e.target.src)
-                                }
-                                alt="App screen"
-                            />
-                        </div>
                         <img
-                            height={height - height * 0.3}
+                            style={{ marginLeft: "5%"}}
                             className="app-screenshots--large-image"
-                            src={activeProject.screenShots[i + 2]}
+                            src={activeProject.screenShots[i + 1]}
                             onClick={e => toggleExpandedScreen(e.target.src)}
                             alt="App screen"
-                        />
+                            />
                     </div>
                 );
             } else if (activeProject.type === projectTypes.web) {
                 imageNode = (
                     <div
-                        key={i}
-                        style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "center",
-                            zIndex: 7,
-                        }}
-                        className={classNames("screenshot-node", {
-                            // ["screen-shots-incoming"]: !itemDeselected, // eslint-disable-line
-                            // ["screen-shots-departing"]: itemDeselected, // eslint-disable-line
-                        })}
+                    key={i}
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        zIndex: 7,
+                    }}
+                    className="screenshot-node"
                     >
                         <div
                             style={{
@@ -116,7 +80,7 @@ const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex
                                 justifyContent: "center",
                                 alignItems: "center",
                             }}
-                        >
+                            >
                             <img
                                 // height={height - height * 0.5}
                                 // width="68%"
@@ -126,7 +90,7 @@ const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex
                                     toggleExpandedScreen(e.target.src)
                                 }
                                 alt="App screen"
-                            />
+                                />
                             <img
                                 className="app-screenshots--web-sml-img"
                                 src={activeProject.screenShots[i + 1]}
@@ -134,7 +98,7 @@ const AppScreenshots = ({ activeProject, height, width, deselected, currentIndex
                                     toggleExpandedScreen(e.target.src)
                                 }
                                 alt="App screen"
-                            />
+                                />
                         </div>
                     </div>
                 );

@@ -4,7 +4,7 @@ import MediaQuery from "react-responsive";
 import AppScreensPanel from "./AppScreensPanel/AppScreens";
 import AppFeaturesPanel from "./AppFeaturesPanel/AppFeatures";
 import ProjectListMobile from "./ProjectListMobile";
-import Context from "../Context";
+
 
 const Work = () => {
     const data = useStaticQuery(graphql`
@@ -31,10 +31,6 @@ const Work = () => {
 
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
     const [deselected, setDeselected] = useState(false);
-    const [context, setContext] = useState({
-        imageNodes: [],
-        updateContext,
-    });
 
     const projects = data.site.siteMetadata.projectData.projects;
 
@@ -44,16 +40,8 @@ const Work = () => {
         setDeselected(false);
     }
 
-    function updateContext(newContext) {
-        try {
-            setContext({ ...newContext });
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
     return (
-        <Context.Provider value={context}>
+        <>
             <MediaQuery query="(min-width: 601px)">
                 <div
                     style={{
@@ -76,7 +64,7 @@ const Work = () => {
             <MediaQuery query="(max-width: 600px)">
                 <ProjectListMobile projects={projects} />
             </MediaQuery>
-        </Context.Provider>
+        </>
     );
 };
 
