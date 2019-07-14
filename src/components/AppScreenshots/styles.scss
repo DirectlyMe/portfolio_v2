@@ -175,7 +175,6 @@
     height: 65vh;
     max-height: 850px;
     border-radius: 15px;
-    margin-top: 2%;
 }
 
 .app-screenshots--web-lrg-img {
@@ -185,20 +184,19 @@
     margin-bottom: 10vh;
     width: 68%;
     max-width: 1080px;
-    height: 50vh;
+    height: auto;
     max-height: 600px;
 }
 
 .app-screenshots--web-sml-img {
     width: 26%;
     max-width: 420px;
-    height: 65vh;
+    height: auto;
     max-height: 850px;
     border-radius: 15px;
-    margin-top: 4vh;
 }
 
-.app-screenshots--small-images-column {
+.app-screenshots--small-svgs-column {
     width: 17%;
     display: flex;
     flex-direction: column;

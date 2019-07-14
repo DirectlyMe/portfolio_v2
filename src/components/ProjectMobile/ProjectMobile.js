@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/fontawesome-free-brands";
 import Slider from "../Slider/Slider";
 import Tag from "../Tag";
-import DownArrow from "../../images/DownArrow.svg";
+import DownArrow from "../../svgs/DownArrow.svg";
 import projectTypes from "../../ProjectTypes";
 import "./styles.scss";
 
@@ -71,7 +71,6 @@ class ProjectMobile extends Component {
                             fontSize: "26px",
                             fontWeight: "bold",
                             textAlign: "center",
-                            marginTop: "2%",
                         }}
                     >
                         {name}
@@ -95,7 +94,7 @@ class ProjectMobile extends Component {
                             }));
                         }}
                     >
-                        <div>Images</div>
+                        <div>images</div>
                         <DownArrow />
                     </div>
                 </div>
@@ -138,17 +137,17 @@ class ProjectMobile extends Component {
                                 }));
                             }}
                         >
-                            <div>Images</div>
+                            <div>svgs</div>
                             <DownArrow />
                         </div>
                     </div>
                     <div
-                        className="app-images"
+                        className="app-svgs"
                         ref={this.SliderRef}
                         onLoad={this.scrollToSlider()}
                     >
                         <Slider
-                            images={screenShots}
+                            svgs={screenShots}
                             showMore={this.state.showMore}
                         />
                     </div>

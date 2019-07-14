@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/fontawesome-free-brands";
+import { faGithub, faAws } from "@fortawesome/fontawesome-free-brands";
 import { animated, useSpring } from "react-spring";
 import classnames from "classnames";
 import Tag from "../Tag";
-import BlueCircle from "../../images/BlueCircle.svg";
-import WhiteCircle from "../../images/WhiteCircle.svg";
+import BlueCircle from "../../svgs/BlueCircle.svg";
+import WhiteCircle from "../../svgs/WhiteCircle.svg";
 import "./styles.scss";
 import { useStaticQuery, graphql } from "gatsby";
+import ProjectTypes from "../../ProjectTypes";
 
 const AppFeatures = ({ activeProjectIndex, deselected }) => {
     const data = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                                 color
                             }
                             github
+                            siteLink
                         }
                     }
                 }
@@ -40,15 +42,17 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
 
         return () => {
             window.removeEventListener("resize", updateWindowDimensions);
-        }
-    }, [])
+        };
+    }, []);
 
     function updateWindowDimensions() {
         setHeight(window.innerHeight);
         setWidth(window.innerWidth);
     }
 
-    const { name, features, technologies, github } = data.site.siteMetadata.projectData.projects[activeProjectIndex];
+    const project =
+        data.site.siteMetadata.projectData.projects[activeProjectIndex];
+    const { name, features, technologies, github, siteLink } = project;
     const featureList = features.map(feature => (
         <li style={{ width: "100%", marginRight: "40px" }} key={feature}>
             {feature}
@@ -59,7 +63,7 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
         <Tag key={index} text={technology.name} color={technology.color} />
     ));
 
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     return (
         <>
@@ -101,16 +105,44 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                     >
                         {featureList}
                     </ul>
-                    <a
+                    <ul
                         style={{
                             display: "flex",
+                            alignItems: "center",
                             justifyContent: "center",
-                            color: "black",
+                            flexDirection: "row",
+                            textAlign: "center",
+                            marginTop: "5%",
+                            marginBottom: "5%",
+                            fontSize: "18px",
+                            fontWeight: "300",
                         }}
-                        href={github}
                     >
-                        <FontAwesomeIcon icon={faGithub} size="3x" />
-                    </a>
+                        <a
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                color: "black",
+                                marginRight: "10px",
+                            }}
+                            href={github}
+                        >
+                            <FontAwesomeIcon icon={faGithub} size="3x" />
+                        </a>
+                        {project.type === ProjectTypes.web ? (
+                            <a
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    color: "black",
+                                    marginLeft: "10px",
+                                }}
+                                href={siteLink}
+                            >
+                                <FontAwesomeIcon icon={faAws} size="3x" />
+                            </a>
+                        ) : null}
+                    </ul>
                     <ul className="app-details--tech-list">{techList}</ul>
                 </div>
                 <WhiteCircle

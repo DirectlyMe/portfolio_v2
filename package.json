@@ -27,7 +27,8 @@
     "react-helmet": "^5.2.1",
     "react-responsive": "^7.0.0",
     "react-spring": "^8.0.27",
-    "react-swipeable": "^5.3.0"
+    "react-swipeable": "^5.3.0",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

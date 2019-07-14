@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { useTransition, animated, config } from "react-spring";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import Context from "../../Context";
-import ProjectTabs from "../ProjectTabs/ProjectTabs";
-import YellowCircle from "../../images/YellowCircle.svg";
-import AppScreenshots from "../AppScreenshots/AppScreenshots";
 import "./styles.scss";
+
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { graphql, useStaticQuery } from "gatsby";
+import React, { useContext, useEffect, useState } from "react";
+
+import Context from "../../Context";
+import YellowCircle from "../../svgs/YellowCircle.svg";
+import AppScreenshots from "../AppScreenshots/AppScreenshots";
+import ProjectTabs from "../ProjectTabs/ProjectTabs";
 
 const AppScreens = ({
     projectList,
@@ -126,9 +127,9 @@ const AppScreens = ({
                 currentIndex={currentIndex}
                 translateValue={translateValue}
             />
-            <div className="more-images--wrapper">
+            <div className="more-svgs--wrapper">
                 {currentIndex < context.imageNodes.length - 1 ? (
-                    <span className="more-images--btn">
+                    <span className="more-svgs--btn">
                         <FontAwesomeIcon
                             icon={faAngleDown}
                             size="5x"
@@ -137,7 +138,7 @@ const AppScreens = ({
                     </span>
                 ) : null}
                 {currentIndex > 0 ? (
-                    <span className="more-images--btn">
+                    <span className="more-svgs--btn">
                         <FontAwesomeIcon
                             icon={faAngleUp}
                             size="5x"

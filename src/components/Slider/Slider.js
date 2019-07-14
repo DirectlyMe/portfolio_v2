@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import classNames from "classnames";
 import { Swipeable } from "react-swipeable";
 import Slide from "./Slide";
-import { ReactComponent as RightArrow } from "../../images/RightArrow.svg";
-import { ReactComponent as LeftArrow } from "../../images/LeftArrow.svg";
+import { ReactComponent as RightArrow } from "../../svgs/RightArrow.svg";
+import { ReactComponent as LeftArrow } from "../../svgs/LeftArrow.svg";
 import "./styles.scss";
 
 class Slider extends Component {
@@ -12,7 +12,7 @@ class Slider extends Component {
     this.state = {
       currentIndex: 0,
       translateValue: 0,
-      images: this.props.images
+      svgs: this.props.svgs
     };
   }
 
@@ -28,7 +28,7 @@ class Slider extends Component {
   };
 
   goToNextSlide = () => {
-    if (this.state.currentIndex === this.state.images.length - 1) {
+    if (this.state.currentIndex === this.state.svgs.length - 1) {
       return this.setState({
         currentIndex: 0,
         translateValue: 0
@@ -42,9 +42,9 @@ class Slider extends Component {
   };
 
   render() {
-    const { images } = this.state;
+    const { svgs } = this.state;
 
-    const imageSlides = images.map((image, i) => (
+    const svgslides = svgs.map((image, i) => (
       <Slide key={i} image={image} />
     ));
 
@@ -67,7 +67,7 @@ class Slider extends Component {
               transition: "transform ease-out 0.45s"
             }}
           >
-            {imageSlides}
+            {svgslides}
           </div>
           <LeftArrow className="left-arrow" onClick={this.goToPrevSlide} />
           <RightArrow className="right-arrow" onClick={this.goToNextSlide} />
