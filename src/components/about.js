@@ -67,7 +67,7 @@ class AboutScreen extends Component {
                         >
                             <img
                                 alt="Me"
-                                src="https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/svgs/general/picture_of_me.jpg"
+                                src="https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/general/picture_of_me.jpg"
                                 width="450px"
                                 height="450px"
                                 style={{
@@ -75,10 +75,12 @@ class AboutScreen extends Component {
                                     marginTop: "10vh",
                                     marginLeft: "4%",
                                     boxShadow: "3px 2px 3px rgba(0,0,0,.5)",
-                                    objectFit: "cover"
+                                    objectFit: "cover",
                                 }}
                             />
-                            <div style={{ marginTop: "12vh", fontSize: "24px" }}>
+                            <div
+                                style={{ marginTop: "12vh", fontSize: "24px" }}
+                            >
                                 <p
                                     style={{
                                         fontSize: "32px",
@@ -153,14 +155,8 @@ class AboutScreen extends Component {
                         <div className="about-technologies--wrapper">
                             <div className="about-technologies">
                                 <FontAwesomeIcon icon={faSass} size="4x" />
-                                <FontAwesomeIcon
-                                    icon={faJsSquare}
-                                    size="4x"
-                                />
-                                <FontAwesomeIcon
-                                    icon={faCss3Alt}
-                                    size="4x"
-                                />
+                                <FontAwesomeIcon icon={faJsSquare} size="4x" />
+                                <FontAwesomeIcon icon={faCss3Alt} size="4x" />
                                 <FontAwesomeIcon icon={faReact} size="4x" />
                                 <FontAwesomeIcon icon={faHtml5} size="4x" />
                                 <FontAwesomeIcon icon={faPhp} size="4x" />
@@ -210,7 +206,20 @@ class AboutScreen extends Component {
                     </div>
                 </MediaQuery>
                 <MediaQuery query="(max-width: 499px)">
-                   <p className="about-me">I'm Jack Hansen, a frontend developer living in Ogden Utah, currently working at Dakcs Software Systems.</p>
+                    <p className="about-me">
+                        I'm Jack Hansen, a frontend developer living in Ogden
+                        Utah, currently working at Dakcs Software Systems.
+                    </p>
+                    <div className="about-technologies--wrapper">
+                        <div className="about-technologies">
+                            <FontAwesomeIcon icon={faSass} size="3x" />
+                            <FontAwesomeIcon icon={faJsSquare} size="3x" />
+                            <FontAwesomeIcon icon={faCss3Alt} size="3x" />
+                            <FontAwesomeIcon icon={faReact} size="3x" />
+                            <FontAwesomeIcon icon={faHtml5} size="3x" />
+                            <FontAwesomeIcon icon={faPhp} size="3x" />
+                        </div>
+                    </div>
                 </MediaQuery>
             </>
         );

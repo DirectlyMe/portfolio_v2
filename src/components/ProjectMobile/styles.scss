@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+.project {
+  margin-bottom: 80px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -30,4 +34,18 @@ ul {
   margin-top: 10%;
   margin-bottom: 4%;
   margin-right: 5%;
+}
+
+.project-image--container {
+  display: flex;
+  justify-content: center;
+
+  .project-image {
+    width: 95vw;
+  }
+
+  .project-image--app {
+    width: auto;
+    height: 400px;
+  }
 }

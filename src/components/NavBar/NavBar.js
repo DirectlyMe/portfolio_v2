@@ -3,9 +3,9 @@ import "./styles.scss";
 import classNames from "classnames";
 import React, { useContext } from "react";
 import MediaQuery from "react-responsive";
+import Image from "../image";
 
 import Context from "../../Context";
-import GatsbyIcon from "../../images/gatsby-icon.png";
 
 const NavBar = ({ currentPage }) => {
     const context = useContext(Context);
@@ -50,8 +50,8 @@ const NavBar = ({ currentPage }) => {
             </MediaQuery>
             <MediaQuery query="(max-width: 499px)">
                 <nav className="navbar">
-                    <div style={{ height: "50px", width: "50px" }}>
-                        <GatsbyIcon />
+                    <div style={{ height: "80px", width: "80px" }}>
+                        <Image />
                     </div>
                     <div className="navbar-links">
                         <a onClick={() => context.changePage("/work")} className="navbar-link">Work</a>

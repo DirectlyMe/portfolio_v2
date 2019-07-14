@@ -22,10 +22,10 @@ module.exports = {
             "Clean, minimalist style"
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/home_desktop.jpg",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/home_mobile.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/item_desktop.jpg",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/item_mobile.jpg"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/home_desktop.jpg",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/home_mobile.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/item_desktop.jpg",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/item_mobile.jpg"
           ],
           technologies: [
             {
@@ -53,10 +53,10 @@ module.exports = {
             "Control your business by toggle between production mode and test mode",
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/desktop_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/mobile_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/Screen+Shot+2019-01-13+at+6.43.27+PM.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/olyve_art/Screen+Shot+2019-01-13+at+6.46.16+PM.png"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/desktop_home.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/mobile_home.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.43.27+PM.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.46.16+PM.png"
           ],
           technologies: [
             {
@@ -87,10 +87,10 @@ module.exports = {
             "Build a community"
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/spots/Screenshot_20190113-164627.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/spots/Screenshot_20190113-165521.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/spots/Screenshot_20190113-170240.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/spots/Screenshot_20190113-170736.png"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/spots/Screenshot_20190113-164627.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/spots/Screenshot_20190113-165521.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/spots/Screenshot_20190113-170240.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/spots/Screenshot_20190113-170736.png"
           ],
           technologies: [
             {
@@ -118,10 +118,10 @@ module.exports = {
             "Authenticate with google for extra security"
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.39.08.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.32.59.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.33.16.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.43.36.png"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.39.08.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.32.59.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.33.16.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/crypto_watch/Simulator+Screen+Shot+-+iPhone+XR+-+2018-11-15+at+15.43.36.png"
           ],
           technologies: [
             {

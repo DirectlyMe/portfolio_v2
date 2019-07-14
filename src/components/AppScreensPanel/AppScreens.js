@@ -127,9 +127,9 @@ const AppScreens = ({
                 currentIndex={currentIndex}
                 translateValue={translateValue}
             />
-            <div className="more-svgs--wrapper">
+            <div className="more-images--wrapper">
                 {currentIndex < context.imageNodes.length - 1 ? (
-                    <span className="more-svgs--btn">
+                    <span className="more-images--btn">
                         <FontAwesomeIcon
                             icon={faAngleDown}
                             size="5x"
@@ -138,7 +138,7 @@ const AppScreens = ({
                     </span>
                 ) : null}
                 {currentIndex > 0 ? (
-                    <span className="more-svgs--btn">
+                    <span className="more-images--btn">
                         <FontAwesomeIcon
                             icon={faAngleUp}
                             size="5x"

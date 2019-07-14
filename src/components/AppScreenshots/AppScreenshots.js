@@ -14,7 +14,7 @@ const AppScreenshots = ({ activeProject, height, translateValue }) => {
     useEffect(() => {
         setExpandSelected(0);
 
-        const nodes = getsvgs(
+        const nodes = getImages(
             activeProject
         );
 
@@ -23,13 +23,13 @@ const AppScreenshots = ({ activeProject, height, translateValue }) => {
     }, [activeProject]);
 
 
-    function toggleExpandedScreen(svgsrc) {
-        console.log(svgsrc);
-        setSelectedImage(svgsrc);
+    function toggleExpandedScreen(imageSrc) {
+        console.log(imageSrc);
+        setSelectedImage(imageSrc);
         setExpandSelected(!expandedSelected);
     }
 
-    function getsvgs(activeProject) {
+    function getImages(activeProject) {
         let imageNodes = [];
 
         for (let i = 0; i < activeProject.screenShots.length; i = i + 2) {
@@ -127,7 +127,7 @@ const AppScreenshots = ({ activeProject, height, translateValue }) => {
             </div>
             {expandedSelected ? (
                 <ExpandedScreen
-                    svgsrc={selectedImage}
+                    imageSrc={selectedImage}
                     toggleSelectedFunc={toggleExpandedScreen}
                 />
             ) : null}
