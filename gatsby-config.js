@@ -72,7 +72,7 @@ module.exports = {
               color: "FF9F37"
             },
             {
-              name: "ASP.NET CORE",
+              name: "ASP.NET",
               color: "4CBDF4"
             },
           ],

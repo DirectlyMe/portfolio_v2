@@ -4,7 +4,7 @@ import Project from "./ProjectMobile/ProjectMobile";
 const ProjectList = ({ projects }) => {
     const mobileProjects = projects.map((project, index) => (
         <Project
-            image={project.screenShots[0]}
+            images={project.screenShots}
             technologies={project.technologies}
             features={project.features}
             name={project.name}

@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.scss";
 
-const ExpandedImage = ({ svgsrc, toggleSelectedFunc }) => {
+const ExpandedImage = ({ imageSrc, toggleSelectedFunc }) => {
     return (
-        <div className="expanded-image" onClick={() => toggleSelectedFunc(svgsrc)}>
+        <div className="expanded-image" onClick={() => toggleSelectedFunc(imageSrc)}>
             <img
-                src={svgsrc}
+                src={imageSrc}
                 className="expanded-image--image"
                 alt="Project"
-                onClick={() => toggleSelectedFunc(svgsrc)}
+                onClick={() => toggleSelectedFunc(imageSrc)}
             />
         </div>
     );

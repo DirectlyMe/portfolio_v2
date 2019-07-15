@@ -22,6 +22,7 @@ const Work = () => {
                                 color
                             }
                             github
+                            siteLink
                         }
                     }
                 }
