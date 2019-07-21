@@ -4,6 +4,7 @@ import LrgCircle from "../svgs/AboutLrgCircle.svg";
 import MedCircle from "../svgs/AboutMedCircle.svg";
 import SmlCircle from "../svgs/AboutSmlCircle.svg";
 import SmallestCircle from "../svgs/AboutSmlestCircle.svg";
+import Contact from "./contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faGithub,
@@ -162,6 +163,7 @@ class AboutScreen extends Component {
                                 <FontAwesomeIcon icon={faPhp} size="4x" />
                             </div>
                         </div>
+                        <Contact />
                         <div
                             key={this.state.height}
                             style={{
@@ -207,8 +209,19 @@ class AboutScreen extends Component {
                 </MediaQuery>
                 <MediaQuery query="(max-width: 499px)">
                     <p className="about-me">
-                        I'm Jack Hansen, a frontend developer living in Ogden
-                        Utah, currently working at Dakcs Software Systems.
+                        I'm{" "}
+                        <a
+                            className="my-name"
+                            href="https://www.linkedin.com/in/jack-hansen-6b8030126/"
+                        >
+                            Jack Hansen
+                        </a>
+                        , a frontend developer living in Ogden Utah and
+                        currently working at{" "}
+                        <a href="https://www.dakcs.com/" className="my-name">
+                            Dakcs Software Systems
+                        </a>
+                        .
                     </p>
                     <div className="about-technologies--wrapper">
                         <div className="about-technologies">

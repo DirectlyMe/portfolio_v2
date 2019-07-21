@@ -1,0 +1,18 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    
+    a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #4CBDF4;
+        
+        &:visited {
+            color: #4CBDF4;
+        }
+    }
+}

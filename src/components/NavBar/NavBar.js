@@ -4,6 +4,7 @@ import classNames from "classnames";
 import React, { useContext } from "react";
 import MediaQuery from "react-responsive";
 import Image from "../image";
+import Tree from "../../svgs/tree.svg";
 
 import Context from "../../Context";
 
@@ -50,8 +51,8 @@ const NavBar = ({ currentPage }) => {
             </MediaQuery>
             <MediaQuery query="(max-width: 499px)">
                 <nav className="navbar">
-                    <div style={{ height: "80px", width: "80px" }}>
-                        <Image />
+                    <div style={{ height: "80px", width: "80px", marginLeft: "25px", marginTop: "10px" }}>
+                        <Tree />
                     </div>
                     <div className="navbar-links">
                         <a onClick={() => context.changePage("/work")} className="navbar-link">Work</a>

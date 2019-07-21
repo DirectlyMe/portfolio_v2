@@ -19,7 +19,7 @@ const ProjectMobile = ({
     const [selectedImage, setSelectedImage] = useState("");
 
     const appFeatures = features.map(feature => (
-        <li key={feature} style={{ padding: ".7em" }}>
+        <li key={feature} style={{ padding: "10px" }}>
             {feature}
         </li>
     ));

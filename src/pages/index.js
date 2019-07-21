@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Work from "../components/work";
 import Context from "../Context";
+import Contact from "../components/contact";
 
 const IndexPage = () => {
     const [context, setContext] = useState({
@@ -22,6 +23,7 @@ const IndexPage = () => {
 
     const about = useRef(null);
     const work = useRef(null);
+    const contact = useRef(null);
 
     useEffect(() => {
         if (window.innerWidth > 500) {
@@ -82,6 +84,12 @@ const IndexPage = () => {
                 behavior: "auto",
             });
             setCurrentPage("/work");
+        } else if (page === "/contact") {
+            window.scrollTo({
+                left: 0,
+                top: contact.current.offsetTop,
+                behavior: "auto",
+            });
         }
     }
 
@@ -94,6 +102,9 @@ const IndexPage = () => {
                 </div>
                 <div ref={work}>
                     <Work />
+                </div>
+                <div ref={contact}>
+                    <Contact />
                 </div>
             </Layout>
         </Context.Provider>

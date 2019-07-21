@@ -21,6 +21,15 @@
   line-height: 50px;
 }
 
+.my-name {
+  text-decoration: none;
+  color: #4CBDF4;
+
+  &:visited {
+    color: #4CBDF4
+  }
+}
+
 .about-title {
   font-family: 'Ubuntu', sans-serif;
   display: flex;
