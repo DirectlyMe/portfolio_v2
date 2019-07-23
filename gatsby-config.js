@@ -53,10 +53,10 @@ module.exports = {
             "Control your business by toggle between production mode and test mode",
           ],
           screenShots: [
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/desktop_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/mobile_home.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.43.27+PM.png",
-            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art/Screen+Shot+2019-01-13+at+6.46.16+PM.png"
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art_inventory/olyve_art_inventory_manage_desktop.jpg.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art_inventory/olyve_art_inventory_manage_mobile.jpg.png",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art_inventory/olyve_art_inventory_orders_desktop.jpg",
+            "https://s3-us-west-2.amazonaws.com/jackhansen-portfolio.com/Images/olyve_art_inventory/olyve_art_inventory_orders_mobile.jpg.png"
           ],
           technologies: [
             {

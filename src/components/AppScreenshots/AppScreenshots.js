@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import classNames from "classnames";
 import projectTypes from "../../ProjectTypes";
 import ExpandedScreen from "../ExpandedImage/ExpandedImage";
 import Context from "../../Context";
@@ -42,7 +41,6 @@ const AppScreenshots = ({ activeProject, height, translateValue }) => {
                         display: "flex",
                         flexDirection: "row",
                         justifyContent: "center",
-                        marginTop: "8vh",
                         zIndex: 7,
                     }}
                     className="screenshot-node"
@@ -67,11 +65,16 @@ const AppScreenshots = ({ activeProject, height, translateValue }) => {
                 imageNode = (
                     <div
                     key={i}
-                    style={{
+                    style={ i === 0 ? {
                         display: "flex",
                         flexDirection: "row",
                         justifyContent: "center",
-                        marginTop: "10vh",
+                        marginTop: "2vh",
+                        zIndex: 7,
+                    } : {
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
                         zIndex: 7,
                     }}
                     className="screenshot-node"

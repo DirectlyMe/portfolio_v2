@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import Work from "../components/work";
 import Context from "../Context";
 import Contact from "../components/contact";
+import MediaQuery from "react-responsive";
 
 const IndexPage = () => {
     const [context, setContext] = useState({
@@ -103,9 +104,11 @@ const IndexPage = () => {
                 <div ref={work}>
                     <Work />
                 </div>
-                <div ref={contact}>
-                    <Contact />
-                </div>
+                <MediaQuery query="(max-width: 499px)">
+                    <div ref={contact}>
+                        <Contact />
+                    </div>
+                </MediaQuery>
             </Layout>
         </Context.Provider>
     );

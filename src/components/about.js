@@ -4,6 +4,8 @@ import LrgCircle from "../svgs/AboutLrgCircle.svg";
 import MedCircle from "../svgs/AboutMedCircle.svg";
 import SmlCircle from "../svgs/AboutSmlCircle.svg";
 import SmallestCircle from "../svgs/AboutSmlestCircle.svg";
+import Dotnet from "../svgs/dotnet.svg";
+import Typescript from "../svgs/typescript.svg";
 import Contact from "./contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,6 +17,7 @@ import {
     faReact,
     faHtml5,
     faPhp,
+    faT,
 } from "@fortawesome/fontawesome-free-brands";
 import "./about_styles.scss";
 
@@ -47,7 +50,7 @@ class AboutScreen extends Component {
                 <MediaQuery query="(min-width: 900px)">
                     <div
                         style={{
-                            backgroundColor: "#FFC95F",
+                            backgroundColor: "#FCFFB3",
                             height: this.state.height,
                         }}
                     >
@@ -63,6 +66,7 @@ class AboutScreen extends Component {
                                 flexDirection: "row",
                                 justifyContent: "center",
                                 marginRight: "6%",
+                                lineHeight: "40px",
                             }}
                             className="about"
                         >
@@ -73,14 +77,14 @@ class AboutScreen extends Component {
                                 height="450px"
                                 style={{
                                     borderRadius: "50%",
-                                    marginTop: "10vh",
+                                    marginTop: "8vh",
                                     marginLeft: "4%",
                                     boxShadow: "3px 2px 3px rgba(0,0,0,.5)",
                                     objectFit: "cover",
                                 }}
                             />
                             <div
-                                style={{ marginTop: "12vh", fontSize: "24px" }}
+                                style={{ marginTop: "10vh", fontSize: "24px" }}
                             >
                                 <p
                                     style={{
@@ -92,39 +96,29 @@ class AboutScreen extends Component {
                                 </p>
                                 <p
                                     style={{
-                                        marginLeft: "10%",
-                                        marginTop: "-1%",
-                                        width: "22em",
-                                    }}
-                                >
-                                    Thanks for taking the time to check out my
-                                    portfolio.
-                                </p>
-                                <p
-                                    style={{
                                         textAlign: "center",
-                                        marginTop: "-2%",
+                                        marginBottom: "30px",
+                                        marginLeft: "20px",
                                     }}
                                 >
-                                    - About me -
+                                    I’m{" "}
+                                    <a
+                                        className="my-name"
+                                        href="https://www.linkedin.com/in/jack-hansen-6b8030126/"
+                                    >
+                                        Jack Hansen
+                                    </a>
+                                    , a frontend developer <br />
+                                    living in Ogden Utah. I'm currently working{" "}
+                                    <br /> at{" "}
+                                    <a
+                                        href="https://www.dakcs.com/"
+                                        className="my-name"
+                                    >
+                                        Dakcs Software Systems
+                                    </a>
+                                    .
                                 </p>
-                                <ul
-                                    style={{
-                                        marginTop: "-5%",
-                                        textAlign: "center",
-                                    }}
-                                >
-                                    <li>
-                                        I’m primarily a mobile developer, with{" "}
-                                        <br /> experience in web, android, and
-                                        ios.
-                                    </li>
-                                    <li style={{ marginTop: "-6%" }}>
-                                        I’m currently pursuing a bachelors in{" "}
-                                        <br /> computer science with a minor in
-                                        design.
-                                    </li>
-                                </ul>
                                 <div
                                     style={{
                                         textAlign: "center",
@@ -138,7 +132,7 @@ class AboutScreen extends Component {
                                         <FontAwesomeIcon
                                             icon={faGithub}
                                             size="2x"
-                                            style={{ marginRight: "1em" }}
+                                            style={{ marginRight: "20px" }}
                                         />
                                     </a>
                                     <a
@@ -151,16 +145,33 @@ class AboutScreen extends Component {
                                         />
                                     </a>
                                 </div>
+                                <div
+                                    style={{
+                                        marginTop: "30px",
+                                        marginLeft: "20px",
+                                    }}
+                                >
+                                    <div className="contact">
+                                        <h3>
+                                            Interested in starting a project?
+                                        </h3>
+                                        <a href="mailto: hansenja2011@gmail.com">
+                                            Let's talk.
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="about-technologies--wrapper">
                             <div className="about-technologies">
-                                <FontAwesomeIcon icon={faSass} size="4x" />
-                                <FontAwesomeIcon icon={faJsSquare} size="4x" />
-                                <FontAwesomeIcon icon={faCss3Alt} size="4x" />
-                                <FontAwesomeIcon icon={faReact} size="4x" />
-                                <FontAwesomeIcon icon={faHtml5} size="4x" />
-                                <FontAwesomeIcon icon={faPhp} size="4x" />
+                                <FontAwesomeIcon icon={faJsSquare} size="3x" />
+                                <FontAwesomeIcon icon={faReact} size="3x" />
+                                <Typescript />
+                                <FontAwesomeIcon icon={faPhp} size="3x" />
+                                <Dotnet />
+                                <FontAwesomeIcon icon={faCss3Alt} size="3x" />
+                                <FontAwesomeIcon icon={faSass} size="3x" />
+                                <FontAwesomeIcon icon={faHtml5} size="3x" />
                             </div>
                         </div>
                         <Contact />
@@ -225,12 +236,14 @@ class AboutScreen extends Component {
                     </p>
                     <div className="about-technologies--wrapper">
                         <div className="about-technologies">
-                            <FontAwesomeIcon icon={faSass} size="3x" />
                             <FontAwesomeIcon icon={faJsSquare} size="3x" />
-                            <FontAwesomeIcon icon={faCss3Alt} size="3x" />
                             <FontAwesomeIcon icon={faReact} size="3x" />
-                            <FontAwesomeIcon icon={faHtml5} size="3x" />
+                            <Typescript />
                             <FontAwesomeIcon icon={faPhp} size="3x" />
+                            <Dotnet />
+                            <FontAwesomeIcon icon={faCss3Alt} size="3x" />
+                            <FontAwesomeIcon icon={faSass} size="3x" />
+                            <FontAwesomeIcon icon={faHtml5} size="3x" />
                         </div>
                     </div>
                 </MediaQuery>

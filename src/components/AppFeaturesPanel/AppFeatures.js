@@ -83,28 +83,31 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                 >
                     <div
                         style={{
-                            marginTop: "22%",
+                            marginTop: "16vh",
                             textAlign: "center",
                             fontSize: "36px",
+                            marginBottom: "60px",
                             fontWeight: "400",
                         }}
                     >
                         <animated.div style={props}>{name}</animated.div>
                     </div>
-                    <ul
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            flexDirection: "column",
-                            textAlign: "center",
-                            marginTop: "5%",
-                            marginBottom: "5%",
-                            fontSize: "18px",
-                            fontWeight: "300",
-                        }}
-                    >
-                        {featureList}
-                    </ul>
+                    <div className="feature-list--wrapper">
+                        <ul
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                                textAlign: "center",
+                                marginBottom: "20px",
+                                fontSize: "22px",
+                                fontWeight: "300",
+                            }}
+                        >
+                            {featureList}
+                        </ul>
+                    </div>
                     <ul
                         style={{
                             display: "flex",
@@ -113,7 +116,6 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                             flexDirection: "row",
                             textAlign: "center",
                             marginTop: "5%",
-                            marginBottom: "5%",
                             fontSize: "18px",
                             fontWeight: "300",
                         }}

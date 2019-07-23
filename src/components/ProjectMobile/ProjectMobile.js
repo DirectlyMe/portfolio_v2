@@ -58,9 +58,10 @@ const ProjectMobile = ({
                 </div>
                 <div
                     style={{
-                        fontSize: "26px",
+                        fontSize: "28px",
                         textAlign: "center",
                         marginBottom: "20px",
+                        marginTop: "10px"
                     }}
                 >
                     {name}
@@ -75,7 +76,6 @@ const ProjectMobile = ({
                         textAlign: "center",
                         marginTop: "20px",
                         fontSize: "18px",
-                        fontWeight: "300",
                     }}
                 >
                     <a

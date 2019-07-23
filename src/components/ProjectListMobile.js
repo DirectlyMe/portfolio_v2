@@ -17,7 +17,7 @@ const ProjectList = ({ projects }) => {
 
     return (
         <div>
-            <div style={{ marginLeft: "20px", fontSize: "30px", marginBottom: "40px" }}>My Work</div>
+            <div style={{ marginLeft: "20px", paddingTop: "40px", fontSize: "32px", marginBottom: "40px" }}>My Work</div>
             <div>{mobileProjects}</div>
         </div>
     );
