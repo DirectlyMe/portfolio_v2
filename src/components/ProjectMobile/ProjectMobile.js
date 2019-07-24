@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faAws } from "@fortawesome/fontawesome-free-brands";
+import { faGithub } from "@fortawesome/fontawesome-free-brands";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import Tag from "../Tag";
 import Types from "../../ProjectTypes";
 import "./styles.scss";
@@ -61,7 +62,7 @@ const ProjectMobile = ({
                         fontSize: "28px",
                         textAlign: "center",
                         marginBottom: "20px",
-                        marginTop: "10px"
+                        marginTop: "10px",
                     }}
                 >
                     {name}
@@ -99,7 +100,7 @@ const ProjectMobile = ({
                             }}
                             href={siteLink}
                         >
-                            <FontAwesomeIcon icon={faAws} size="3x" />
+                            <FontAwesomeIcon icon={faGlobe} size="3x" />
                         </a>
                     ) : null}
                 </ul>

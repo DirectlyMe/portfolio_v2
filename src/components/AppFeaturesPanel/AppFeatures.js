@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faAws } from "@fortawesome/fontawesome-free-brands";
+import { faGithub } from "@fortawesome/fontawesome-free-brands";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "react-spring";
 import classnames from "classnames";
 import Tag from "../Tag";
@@ -141,7 +142,7 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                                 }}
                                 href={siteLink}
                             >
-                                <FontAwesomeIcon icon={faAws} size="3x" />
+                                <FontAwesomeIcon icon={faGlobe} size="3x" />
                             </a>
                         ) : null}
                     </ul>

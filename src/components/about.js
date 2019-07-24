@@ -6,7 +6,6 @@ import SmlCircle from "../svgs/AboutSmlCircle.svg";
 import SmallestCircle from "../svgs/AboutSmlestCircle.svg";
 import Dotnet from "../svgs/dotnet.svg";
 import Typescript from "../svgs/typescript.svg";
-import Contact from "./contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faGithub,
@@ -17,7 +16,6 @@ import {
     faReact,
     faHtml5,
     faPhp,
-    faT,
 } from "@fortawesome/fontawesome-free-brands";
 import "./about_styles.scss";
 
@@ -174,7 +172,6 @@ class AboutScreen extends Component {
                                 <FontAwesomeIcon icon={faHtml5} size="3x" />
                             </div>
                         </div>
-                        <Contact />
                         <div
                             key={this.state.height}
                             style={{

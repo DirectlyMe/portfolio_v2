@@ -3,13 +3,16 @@ import "./styles.scss";
 import classNames from "classnames";
 import React, { useContext } from "react";
 import MediaQuery from "react-responsive";
-import Image from "../image";
+import { Link } from "gatsby";
+import { Location } from "@reach/router";
 import Tree from "../../svgs/tree.svg";
 
 import Context from "../../Context";
 
-const NavBar = ({ currentPage }) => {
+const NavBar = ({ currentPage, location }) => {
     const context = useContext(Context);
+
+    console.log(location.pathname);
 
     return (
         <div>
@@ -17,7 +20,8 @@ const NavBar = ({ currentPage }) => {
                 <nav className="navbar">
                     <div className="navigationButtons">
                         <li className="navbar-li">
-                            <a
+                            <Link
+                                to="/"
                                 onClick={() => context.changePage("/")}
                                 style={{
                                     textDecoration: "none",
@@ -25,14 +29,15 @@ const NavBar = ({ currentPage }) => {
                                 }}
                                 className={classNames(["nav-button"], {
                                     ["highlight-route-about"]:
-                                        currentPage === "/", // eslint-disable-line
+                                        location.pathname === "/", // eslint-disable-line
                                 })}
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li className="navbar-li">
-                            <a
+                            <Link
+                                to="/work"
                                 onClick={() => context.changePage("/work")}
                                 style={{
                                     textDecoration: "none",
@@ -40,11 +45,11 @@ const NavBar = ({ currentPage }) => {
                                 }}
                                 className={classNames(["nav-button"], {
                                     ["highlight-route-work"]:
-                                        currentPage === "/work", // eslint-disable-line
+                                        location.pathname === "/work", // eslint-disable-line
                                 })}
                             >
                                 Work
-                            </a>
+                            </Link>
                         </li>
                     </div>
                 </nav>
@@ -66,4 +71,8 @@ const NavBar = ({ currentPage }) => {
     );
 };
 
-export default NavBar;
+export default props => (
+    <Location>
+        {locationProps => <NavBar {...locationProps} {...props} />}
+    </Location>
+);
