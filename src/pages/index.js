@@ -15,22 +15,20 @@ const IndexPage = () => {
     const contact = useRef(null);
 
     return (
-            <Layout about={about} work={work} contact={contact}>
-                <SEO title="Home" />
+        <Layout about={about} work={work} contact={contact}>
+            <SEO title="Home" />
+            <div ref={about}>
                 <AboutScreen />
-                <MediaQuery query="(max-width: 499px)">
-                    <div ref={about}>
-                        <AboutScreen />
-                    </div>
-                    <div ref={work}>
-                        <Work />
-                    </div>
-                    <div ref={contact}>
-                        <Contact />
-                    </div>
-                </MediaQuery>
-            </Layout>
-
+            </div>
+            <MediaQuery query="(max-width: 499px)">
+                <div ref={work}>
+                    <Work />
+                </div>
+                <div ref={contact}>
+                    <Contact />
+                </div>
+            </MediaQuery>
+        </Layout>
     );
 };
 
