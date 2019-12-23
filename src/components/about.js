@@ -47,14 +47,11 @@ class AboutScreen extends Component {
             <>
                 <MediaQuery query="(min-width: 900px)">
                     <div
-                        style={{
-                            backgroundColor: "#FCFFB3",
-                            height: "100%",
-                        }}
+                        className="about-wrapper"
                     >
                         <div className="about-title">
                             <h1>Jack Hansen</h1>
-                            <h2>Frontend Developer</h2>
+                            <h2>Software Developer</h2>
                         </div>
                         <div
                             style={{
@@ -106,7 +103,7 @@ class AboutScreen extends Component {
                                     >
                                         Jack Hansen
                                     </a>
-                                    , a frontend developer <br />
+                                    , a software developer <br />
                                     living in Ogden Utah. I'm currently working{" "}
                                     <br /> at{" "}
                                     <a
@@ -224,7 +221,7 @@ class AboutScreen extends Component {
                         >
                             Jack Hansen
                         </a>
-                        , a frontend developer living in Ogden Utah and
+                        , a software developer living in Ogden Utah and
                         currently working at{" "}
                         <a href="https://www.dakcs.com/" className="my-name">
                             Dakcs Software Systems

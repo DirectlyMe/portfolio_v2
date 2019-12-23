@@ -7,6 +7,23 @@
   }
 }
 
+.about-wrapper {
+  &:before {
+    content: "";
+    position: fixed;
+    right: 0;
+    top:0;
+    z-index: -1;
+    overflow: hidden;
+    
+    display: block;
+    background-color: #FCFFB3;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .about {
   animation-name: into-focus;
   animation-duration: 1.5s;

@@ -45,7 +45,7 @@ const NavBar = ({ currentPage, location }) => {
                                 }}
                                 className={classNames(["nav-button"], {
                                     ["highlight-route-work"]:
-                                        location.pathname === "/work", // eslint-disable-line
+                                        location.pathname === "/work/" || location.pathname === "/work", // eslint-disable-line
                                 })}
                             >
                                 Work
