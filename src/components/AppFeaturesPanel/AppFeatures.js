@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/fontawesome-free-brands";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "react-spring";
+import MediaQuery from "react-responsive";
 import classnames from "classnames";
 import Tag from "../Tag";
 import BlueCircle from "../../svgs/BlueCircle.svg";
@@ -148,22 +149,24 @@ const AppFeatures = ({ activeProjectIndex, deselected }) => {
                     </ul>
                     <ul className="app-details--tech-list">{techList}</ul>
                 </div>
-                <WhiteCircle
-                    style={{
-                        position: "absolute",
-                        left: "-225px",
-                        bottom: "8%",
-                        zIndex: "4",
-                    }}
-                />
-                <BlueCircle
-                    style={{
-                        position: "absolute",
-                        right: "-130px",
-                        bottom: "-130px",
-                        zIndex: "4",
-                    }}
-                />
+                <MediaQuery query="(min-width: 1600px)">
+                    <WhiteCircle
+                        style={{
+                            position: "absolute",
+                            left: "-225px",
+                            bottom: "8%",
+                            zIndex: "4",
+                        }}
+                    />
+                    <BlueCircle
+                        style={{
+                            position: "absolute",
+                            right: "-130px",
+                            bottom: "-130px",
+                            zIndex: "4",
+                        }}
+                    />
+                </MediaQuery>
             </div>
         </>
     );

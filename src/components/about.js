@@ -39,7 +39,7 @@ class AboutScreen extends Component {
     }
 
     updateWindowDimensions = () => {
-        this.setState({ width: window.innerWidth, height: window.innerHeight });
+        this.setState({ width: window.innerWidth, height: "100vh" });
     };
 
     render() {
@@ -49,7 +49,7 @@ class AboutScreen extends Component {
                     <div
                         style={{
                             backgroundColor: "#FCFFB3",
-                            height: this.state.height,
+                            height: "100%",
                         }}
                     >
                         <div className="about-title">
@@ -183,7 +183,7 @@ class AboutScreen extends Component {
                             <LrgCircle
                                 className="large-bubble"
                                 style={{
-                                    position: "absolute",
+                                    position: "fixed",
                                     right: 0,
                                     top: "11%",
                                 }}
@@ -191,7 +191,7 @@ class AboutScreen extends Component {
                             <MedCircle
                                 className="medium-bubble"
                                 style={{
-                                    position: "absolute",
+                                    position: "fixed",
                                     right: 80,
                                     top: "42%",
                                 }}
@@ -199,7 +199,7 @@ class AboutScreen extends Component {
                             <SmlCircle
                                 className="small-bubble"
                                 style={{
-                                    position: "absolute",
+                                    position: "fixed",
                                     right: 95,
                                     top: "63%",
                                 }}
@@ -207,7 +207,7 @@ class AboutScreen extends Component {
                             <SmallestCircle
                                 className="smallest-bubble"
                                 style={{
-                                    position: "absolute",
+                                    position: "fixed",
                                     right: 78,
                                     top: "78%",
                                 }}
